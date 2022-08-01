@@ -7,7 +7,7 @@ import com.model2.mvc.service.domain.Product;
 
 public interface ProductDao {
 	
-	public int insertProduct(Product product) throws Exception;
+	public void insertProduct(Product product) throws Exception;
 	
 	public Product findProduct(int productNo) throws Exception;
 	

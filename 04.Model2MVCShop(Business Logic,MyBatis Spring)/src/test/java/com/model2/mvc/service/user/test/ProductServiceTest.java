@@ -116,7 +116,6 @@ public class ProductServiceTest {
 	 @Test
 	 public void testGetProductListAll() throws Exception{
 		 
-		 Product prod = new Product();
 	 	Search search = new Search();
 	 	search.setCurrentPage(1);
 	 	search.setPageSize(3);

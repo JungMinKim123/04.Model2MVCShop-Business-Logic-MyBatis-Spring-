@@ -18,9 +18,9 @@ public class ProductServiceimpl implements ProductService{
 	
 	@Autowired
 	@Qualifier("productDaoImpl")
-	private ProductDao productDAO;
+	private ProductDao productDao;
 	public void setProductDao(ProductDao productDao) {
-		this.productDAO = productDao;
+		this.productDao = productDao;
 	}
 	
 	public ProductServiceimpl() {
@@ -28,16 +28,16 @@ public class ProductServiceimpl implements ProductService{
 	}
 	
 	public void addProduct(Product product) throws Exception{
-		productDAO.insertProduct(product);
+		productDao.insertProduct(product);
 	}
 	
 	public Product getProduct(int productNo) throws Exception{
-		return productDAO.findProduct(productNo);
+		return productDao.findProduct(productNo);
 	}
 	
 	public Map<String, Object> getProductList(Search search) throws Exception{
-		List<Product> list = productDAO.getProductList(search);
-		int totalCount = productDAO.getTotalCount(search);
+		List<Product> list = productDao.getProductList(search);
+		int totalCount = productDao.getTotalCount(search);
 		
 		Map<String,Object> map = new HashMap<String, Object>();
 		map.put("list", list);
@@ -46,7 +46,7 @@ public class ProductServiceimpl implements ProductService{
 	}
 	
 	public void updateProduct(Product product) throws Exception{
-		productDAO.updateProduct(product);
+		productDao.updateProduct(product);
 	}
 	
 }

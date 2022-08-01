@@ -17,14 +17,17 @@ public class ProductDaoImpl implements ProductDao {
 	@Autowired
 	@Qualifier("sqlSessionTemplate")
 	private SqlSession sqlSession;
+	public void setSqlSession(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 	
 	public ProductDaoImpl() {
 	}
 
 	@Override
-	public int insertProduct(Product product) throws Exception {
+	public void insertProduct(Product product) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.insert("ProductMapper.insertProduct",product);
+		sqlSession.insert("ProductMapper.insertProduct",product);
 	}
 
 	@Override

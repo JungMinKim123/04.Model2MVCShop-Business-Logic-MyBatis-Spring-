@@ -7,7 +7,7 @@
 <mapper namespace="ProductMapper">
 
   <resultMap type="product" id="productSelectMap">
-  	<result property="proTranCode" column="t.tran_status_code" jdbcType="VARCHAR"/>
+  	<result property="proTranCode" column="tran_status_code" jdbcType="VARCHAR"/>
   	<result property="prodNo" column="prod_no" jdbcType="NUMERIC"/>
   	<result property="prodName" column="prod_name" jdbcType="VARCHAR"/>
   	<result property="prodDetail" column="prod_detail" jdbcType="VARCHAR"/>
